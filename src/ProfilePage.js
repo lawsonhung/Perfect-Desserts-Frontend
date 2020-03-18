@@ -4,7 +4,7 @@ export default class ProfilePage extends Component {
   render() {
     return (
       <div>
-        <button>Log Out</button>
+        {/* <button>Log Out</button> */}
         <h1>Welcome to the ProfilePage!</h1>
       </div>
     )

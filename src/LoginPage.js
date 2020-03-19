@@ -25,6 +25,7 @@ export default class LoginPage extends Component {
       // Checking what data is returned
       // console.log(data)
 
+      // data.token will return true if it exists
       if (data.token){
         localStorage.token = data.token;
       }

@@ -28,6 +28,8 @@ export default class LoginPage extends Component {
       // data.token will return true if it exists
       if (data.token){
         localStorage.token = data.token;
+        // redirect() is a prop passed down from App.js
+        this.props.redirect('profile');
       }
     })
   }

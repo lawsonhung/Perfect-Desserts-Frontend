@@ -8,16 +8,29 @@ export default class App extends Component {
     page: 'login'
   }
 
+  redirect = (page) => {
+    // If key from state and variable are the same, you can just shorten it to:
+    // this.setState({ page })
+    this.setState({ page: page })
+  }
+
+  // Runs very first time when app loads
+  componentDidMount() {
+    // If localStorage has a token, redirect to profile page
+    if (localStorage.token) {
+      this.redirect('profile')
+    }
+  }
 
   render() {
 
     switch (this.state.page) {
       case 'login':
-        return <LoginPage/>
+        return <LoginPage redirect={this.redirect} />
       case 'signup':
         return <SignUpPage/>
       case 'profile':
-        return <ProfilePage/>
+        return <ProfilePage redirect={this.redirect}/>
       default:
         return <LoginPage/>
     }

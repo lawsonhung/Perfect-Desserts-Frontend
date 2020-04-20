@@ -40,7 +40,9 @@ export default class LoginPage extends Component {
         {/* {<button>Switch to Signup</button>} */}
         <h1>Log in please!</h1>
         <form onSubmit={this.handleSubmit}>
+          <label for="username">Username: </label>
           <input onChange={this.handleChange} value={this.state.username} type="text" name="username" />
+          <label for="password">Password: </label>
           <input onChange={this.handleChange} value={this.state.password} type="password" name="password" />
           <input type="submit" value="Log in" />
         </form>

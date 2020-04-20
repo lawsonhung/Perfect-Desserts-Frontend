@@ -12,7 +12,11 @@ export default class LoginPage extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+    // Local fetch
     fetch('http://localhost:3000/login', {
+
+    // Heroku fetch
+    // fetch('https://perfect-desserts-backend.herokuapp.com/'){
       method: 'POST',
       headers: {
         'Accept': 'application/json',

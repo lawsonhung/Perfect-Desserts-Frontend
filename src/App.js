@@ -3,7 +3,7 @@ import ProfilePage from './ProfilePage';
 import HomePage from './HomePage';
 import LoginPage from './LoginPage';
 import SignUpPage from './SignUpPage';
-// import FourLOLZFourPage from './FourLOLZFourPage';
+import FourOhFourPage from './FourOhFourPage';
 import MessagePage from './MessagePage';
 import { Switch, Route } from 'react-router-dom';
 
@@ -59,6 +59,7 @@ export default class App extends Component {
         <Route path={'/signup'} component={SignUpPage} />
         <Route path={'/messages'} component={MessagePage} />
         <Route path={'/'} component={HomePage} />
+        <Route component={FourOhFourPage} />
       </Switch>
     )
   }

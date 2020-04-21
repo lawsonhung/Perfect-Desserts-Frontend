@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class FourLOLZFourPage extends component {
+export default class FourLOLZFourPage extends Component {
   
   render () {
     return (

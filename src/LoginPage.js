@@ -39,17 +39,19 @@ export default class LoginPage extends Component {
   }
   
   render() {
+    console.log(this.props.children);
     return (
       <div>
         {/* {<button>Switch to Signup</button>} */}
         <h1>Log in please!</h1>
         <form onSubmit={this.handleSubmit}>
-          <label for="username">Username: </label>
+          <label htmlFor="username">Username: </label>
           <input onChange={this.handleChange} value={this.state.username} type="text" name="username" />
-          <label for="password">Password: </label>
+          <label htmlFor="password">Password: </label>
           <input onChange={this.handleChange} value={this.state.password} type="password" name="password" />
           <input type="submit" value="Log in" />
         </form>
+        {this.props.children}
       </div>
     );
   }

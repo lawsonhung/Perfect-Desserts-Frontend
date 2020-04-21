@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import ProfilePage from './ProfilePage';
+import HomePage from './HomePage';
 import LoginPage from './LoginPage';
 import SignUpPage from './SignUpPage';
+// import FourLOLZFourPage from './FourLOLZFourPage';
+import MessagePage from './MessagePage';
+import { Switch, Route } from 'react-router-dom';
 
 export default class App extends Component {
   state = {
@@ -24,17 +28,6 @@ export default class App extends Component {
 
   render() {
 
-    switch (this.state.page) {
-      case 'login':
-        return <LoginPage redirect={this.redirect} />
-      case 'signup':
-        return <SignUpPage/>
-      case 'profile':
-        return <ProfilePage redirect={this.redirect}/>
-      default:
-        return <LoginPage/>
-    }
-
     // return (
     //   <div>
     //     {/* <h1>
@@ -45,5 +38,28 @@ export default class App extends Component {
     //     <LoginPage/>
     //   </div>
     // );
+
+    // switch (this.state.page) {
+    //   case 'login':
+    //     return <LoginPage redirect={this.redirect} >
+    //         <h1>Hello! Login tag</h1>
+    //       </LoginPage>
+    //   case 'signup':
+    //     return <SignUpPage/>
+    //   case 'profile':
+    //     return <ProfilePage redirect={this.redirect}/>
+    //   default:
+    //     return <LoginPage/>
+    // }
+
+    return (
+      <Switch>
+        <Route path={'/profile'} component={ProfilePage} />
+        <Route path={'/login'} component={LoginPage} />
+        <Route path={'/signup'} component={SignUpPage} />
+        <Route path={'/messages'} component={MessagePage} />
+        <Route path={'/'} component={HomePage} />
+      </Switch>
+    )
   }
 }

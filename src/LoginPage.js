@@ -13,10 +13,10 @@ export default class LoginPage extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     // Local fetch
-    fetch('http://localhost:3000/login', {
+    // fetch('http://localhost:3000/login', {
 
     // Heroku fetch
-    // fetch('https://perfect-desserts-backend.herokuapp.com/'){
+    fetch('https://perfect-desserts-backend.herokuapp.com/login', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -33,7 +33,10 @@ export default class LoginPage extends Component {
       if (data.token){
         localStorage.token = data.token;
         // redirect() is a prop passed down from App.js
-        this.props.redirect('profile');
+        // this.props.redirect('profile');
+        // console.log(this);
+        // debugger;
+        this.props.history.push('/profile');
       }
     })
   }
@@ -45,11 +48,17 @@ export default class LoginPage extends Component {
         {/* {<button>Switch to Signup</button>} */}
         <h1>Log in please!</h1>
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor="username">Username: </label>
-          <input onChange={this.handleChange} value={this.state.username} type="text" name="username" />
-          <label htmlFor="password">Password: </label>
-          <input onChange={this.handleChange} value={this.state.password} type="password" name="password" />
+
+          <label>Username: 
+            <input onChange={this.handleChange} value={this.state.username} type="text" name="username" />
+          </label>
+          
+          <label>Password: 
+            <input onChange={this.handleChange} value={this.state.password} type="password" name="password" />
+          </label>
+
           <input type="submit" value="Log in" />
+
         </form>
         {this.props.children}
       </div>

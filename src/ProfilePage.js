@@ -23,7 +23,7 @@ export default class ProfilePage extends Component {
 
   handleClick = () => {
     localStorage.clear();
-    // this.props.redirect('login');
+    // this.props.redirect('login'); 
     this.props.history.push('/login');
   }
 

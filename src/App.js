@@ -57,7 +57,7 @@ export default class App extends Component {
         <Route path={'/profile'} component={ProfilePage} />
         <Route path={'/login'} component={LoginPage} />
         <Route path={'/signup'} component={SignUpPage} />
-        <Route path={'/messages'} component={MessagePage} />
+        <Route path={'/messages/:id'} component={MessagePage} />
         <Route path={'/'} component={HomePage} />
         <Route component={FourOhFourPage} />
       </Switch>

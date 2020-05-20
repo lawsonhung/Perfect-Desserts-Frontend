@@ -8,7 +8,11 @@ export default class ProfilePage extends Component {
 
   // Runs when ProfilePage gets set up
   componentDidMount(){
-    fetch('http://localhost:3000/profile',{
+    // Local fetch
+    // fetch('http://localhost:3000/profile',{
+
+    // Heroku fetch
+    fetch('https://perfect-desserts-backend.herokuapp.com/profile', {
       headers: {
         'Authorization': `Bearer ${localStorage.token}`
       }
@@ -19,7 +23,8 @@ export default class ProfilePage extends Component {
 
   handleClick = () => {
     localStorage.clear();
-    this.props.redirect('login');
+    // this.props.redirect('login'); 
+    this.props.history.push('/login');
   }
 
   render() {
